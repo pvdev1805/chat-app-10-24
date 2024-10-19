@@ -116,3 +116,18 @@ export const logout = (req, res) => {
     console.log(error);
   }
 };
+
+export const getOtherUsers = async (req, res) => {
+  try {
+    const loggedUserId = req.id;
+
+    const otherUsers = await User.find({
+      _id: { $ne: loggedUserId },
+    }).select("-password");
+
+    return res.status(200).json(otherUsers);
+  } catch (error) {
+    console.log("Error! Something went wrong about getOtherUsers");
+    console.log(error);
+  }
+};
