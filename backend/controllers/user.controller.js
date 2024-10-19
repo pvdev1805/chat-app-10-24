@@ -1,5 +1,6 @@
 import { User } from "../models/user.model.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
   try {
@@ -40,7 +41,62 @@ export const register = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    console.log("Error! Something went wrong about User!");
+    console.log("Error! Something went wrong about User Register!");
+    console.log(error);
+  }
+};
+
+export const login = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ message: "All fields are required!" });
+    }
+
+    const user = await User.findOne({ username });
+
+    // Check whether user account existed in the Database
+    if (!user) {
+      return res.status(400).json({
+        message: "Incorrect username or password!",
+        success: false,
+      });
+    }
+
+    // Compare password entered by user and hashed password of user account in database
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+    if (!isPasswordMatch) {
+      return res.status(400).json({
+        message: "Incorrect username or password!",
+        success: false,
+      });
+    }
+
+    const tokenData = {
+      userId: user._id,
+    };
+    const secretKey = process.env.JWT_SECRET_KEY;
+
+    const token = await jwt.sign(tokenData, secretKey, {
+      expiresIn: "1d",
+    });
+
+    return res
+      .status(200)
+      .cookie("token", token, {
+        maxAge: 1 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: "strict",
+      })
+      .json({
+        _id: user._id,
+        username: user.username,
+        fullName: user.fullName,
+        profilePhoto: user.profilePhoto,
+      });
+  } catch (error) {
+    console.log("Error! Something went wrong about User Login!");
     console.log(error);
   }
 };
