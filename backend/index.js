@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/database.js";
 import userRoutes from "./routes/user.route.js";
+import messageRoutes from "./routes/message.route.js";
 
 dotenv.config({});
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // routes
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/message", messageRoutes);
 
 app.listen(PORT, () => {
   connectDB();

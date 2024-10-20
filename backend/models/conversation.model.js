@@ -20,4 +20,8 @@ const conversationSchema = new mongoose.Schema(
   }
 );
 
-export const Conversation = mongoose.model("Conversation", conversationSchema);
+export const Conversation = mongoose.model(
+  "Conversation",
+  conversationSchema,
+  "conversations"
+);

@@ -33,6 +33,7 @@ const RAW_RUNTIME_STATE =
           ["dotenv", "npm:16.4.5"],\
           ["express", "npm:4.21.1"],\
           ["jsonwebtoken", "npm:9.0.2"],\
+          ["mongodb", "virtual:50fcf3170a85c5624a68bf888c06a63a2c4eb934903a02e3ebb8ed136e6ba983a0eacf4149c9dd87d254393d245782ca59c3a92a811694151bc9afa912ed5a65#npm:6.9.0"],\
           ["mongoose", "npm:8.7.2"],\
           ["nodemon", "npm:3.1.7"],\
           ["socket.io", "npm:4.8.0"]\
@@ -269,6 +270,7 @@ const RAW_RUNTIME_STATE =
           ["dotenv", "npm:16.4.5"],\
           ["express", "npm:4.21.1"],\
           ["jsonwebtoken", "npm:9.0.2"],\
+          ["mongodb", "virtual:50fcf3170a85c5624a68bf888c06a63a2c4eb934903a02e3ebb8ed136e6ba983a0eacf4149c9dd87d254393d245782ca59c3a92a811694151bc9afa912ed5a65#npm:6.9.0"],\
           ["mongoose", "npm:8.7.2"],\
           ["nodemon", "npm:3.1.7"],\
           ["socket.io", "npm:4.8.0"]\

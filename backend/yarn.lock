@@ -198,6 +198,7 @@ __metadata:
     dotenv: "npm:^16.4.5"
     express: "npm:^4.21.1"
     jsonwebtoken: "npm:^9.0.2"
+    mongodb: "npm:^6.9.0"
     mongoose: "npm:^8.7.2"
     nodemon: "npm:^3.1.7"
     socket.io: "npm:^4.8.0"
@@ -1350,7 +1351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:6.9.0":
+"mongodb@npm:6.9.0, mongodb@npm:^6.9.0":
   version: 6.9.0
   resolution: "mongodb@npm:6.9.0"
   dependencies:
