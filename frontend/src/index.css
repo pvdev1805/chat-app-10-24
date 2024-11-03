@@ -5,3 +5,32 @@
 .glassmorphism-effect {
   @apply bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100;
 }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+::-webkit-scrollbar {
+  /* Customize the scrollbar width */
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  /* Customize the scrollbar track */
+  background-color: aliceblue;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background: #1b1b1b;
+  border-radius: 10px;
+}

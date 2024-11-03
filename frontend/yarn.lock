@@ -1944,8 +1944,10 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-hot-toast: "npm:^2.4.1"
+    react-icons: "npm:^5.3.0"
     react-redux: "npm:^9.1.2"
     react-router-dom: "npm:^6.27.0"
+    redux-persist: "npm:^6.0.0"
     tailwindcss: "npm:^3.4.14"
     vite: "npm:^5.4.8"
   languageName: unknown
@@ -3312,6 +3314,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "react-icons@npm:5.3.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10c0/a53af0de558f0e2bacfbafc973aa8ca1e6a429006a2f83d70becad5be431726a691e096336c95949bb0d967587b145264c5046d2bc1518969dbae731855d0712
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -3386,6 +3397,15 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 10c0/6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
+  languageName: node
+  linkType: hard
+
+"redux-persist@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "redux-persist@npm:6.0.0"
+  peerDependencies:
+    redux: ">4.0.0"
+  checksum: 10c0/8242d265ab8d28bbc95cf2dc2a05b869eb67aa309b1ed08163c926f3af56dd8eb1ea62118286083461b8ef2024d3b349fd264e5a62a70eb2e74d068c832d5bf2
   languageName: node
   linkType: hard
 

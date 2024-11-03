@@ -23,6 +23,8 @@ const SignUp = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
+    console.log(e.target.elements);
+
     try {
       const res = await axios.post(`${BASE_URL}/api/v1/user/register`, user, {
         headers: {
@@ -42,6 +44,14 @@ const SignUp = () => {
       toast.error(error.response.data.message);
       console.log(error);
     }
+
+    setUser({
+      fullName: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+      gender: "",
+    });
   };
 
   return (
@@ -59,6 +69,7 @@ const SignUp = () => {
                 className="w-full input input-bordered h-10"
                 type="text"
                 placeholder="e.g.: John Smith"
+                value={user.fullName}
                 onChange={(e) => setUser({ ...user, fullName: e.target.value })}
               />
             </div>
@@ -71,6 +82,7 @@ const SignUp = () => {
                 className="w-full input input-bordered h-10"
                 type="text"
                 placeholder="e.g.: johnsmith123"
+                value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
             </div>
@@ -83,6 +95,7 @@ const SignUp = () => {
                 className="w-full input input-bordered h-10"
                 type="password"
                 placeholder="Password"
+                value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </div>
@@ -95,6 +108,7 @@ const SignUp = () => {
                 className="w-full input input-bordered h-10"
                 type="password"
                 placeholder="Confirm Password"
+                value={user.confirmPassword}
                 onChange={(e) =>
                   setUser({ ...user, confirmPassword: e.target.value })
                 }

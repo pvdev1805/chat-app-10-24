@@ -1,3 +1,4 @@
+import { setAuthUser } from "../../redux/userSlice.js";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -12,7 +13,7 @@ const LogIn = () => {
 
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
@@ -29,6 +30,8 @@ const LogIn = () => {
       navigate("/");
 
       console.log(res);
+
+      dispatch(setAuthUser(res.data));
     } catch (error) {
       console.log("Error! Something went wrong with onSubmitHandler in Login!");
       toast.error(error.response.data.message);
@@ -70,7 +73,7 @@ const LogIn = () => {
                 type="password"
                 placeholder="Password"
                 value={user.password}
-                onChange={(e) => setUser({ ...user, username: e.target.value })}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
             </div>
 
