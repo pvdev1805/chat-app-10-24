@@ -1,0 +1,16 @@
+footer {
+  background-color: #333;
+}
+
+footer .footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footer__copyright {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
